@@ -1,0 +1,6 @@
+[Default Applications]
+x-scheme-handler/tg=userapp-Kotatogram Desktop-XV8B41.desktop
+
+[Added Associations]
+x-scheme-handler/tg=userapp-Kotatogram Desktop-XV8B41.desktop;
+image/jpeg=gimp.desktop;
