@@ -1,0 +1,1 @@
+exec pkill picom
