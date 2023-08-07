@@ -21,3 +21,4 @@
 - Lockscreen: Gtklock
 - Wallpaper:  Hyprpaper
 - Theme:      Flavours (catppuccin theme)
+- Notify:     Swaync
