@@ -11,8 +11,7 @@
 - Wallpaper:  Hyprpaper
 
 **hyprland (2023-07-31)**  
-<img src="![hyprland_2023_08_07](https://github.com/risa-tyan/dotfiles/assets/111539573/6a682ad4-2940-46bd-89f0-cdd67d7fe656)
-" width="50%" height="50%">
+<img src="https://github.com/risa-tyan/dotfiles/assets/111539573/6a682ad4-2940-46bd-89f0-cdd67d7fe656" width="50%" height="50%">
 - WM:         Hyprland 
 - Bar:        Waybar-hyprland
 - Terminal:   kitty + alacritty
