@@ -1,0 +1,3 @@
+[Added Associations]
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=org.gnome.FileRoller.desktop;
+text/html=chromium.desktop;firefox.desktop;

@@ -1,0 +1,4 @@
+[Added Associations]
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=libreoffice-calc.desktop;org.gnome.FileRoller.desktop;
+text/html=chromium.desktop;firefox.desktop;
+text/plain=org.kde.kate.desktop;

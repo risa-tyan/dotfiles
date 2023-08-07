@@ -1,0 +1,32 @@
+/* Start flavours */
+/* base16-wofi (https://sr.ht/~knezi/base16-wofi)
+ * Base16 wofi template by knezi
+ * Catppuccin scheme by https://github.com/catppuccin/catppuccin */
+
+window {
+	background-color: #1e1e2e;
+	color: #cdd6f4;
+}
+
+#entry:nth-child(odd) {
+	background-color: #1e1e2e;
+}
+
+#entry:nth-child(even) {
+	background-color: #181825;
+}
+
+#entry:selected {
+	background-color: #313244;
+}
+
+#input {
+	background-color: #181825;
+	color: #585b70;
+	border-color: #313244; 
+}
+
+#input:focus {
+	border-color: #f9e2af; 
+}
+/* End flavours */
