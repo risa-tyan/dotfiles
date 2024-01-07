@@ -1,0 +1,32 @@
+[Added Associations]
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=libreoffice-calc.desktop;org.gnome.FileRoller.desktop;
+text/html=chromium.desktop;firefox.desktop;
+text/plain=org.kde.kate.desktop;
+application/zip=org.kde.ark.desktop;multimc.desktop;code-oss.desktop;
+video/x-matroska=vlc.desktop;mpv.desktop;
+image/jpeg=krita_jpeg.desktop;swayimg.desktop;
+image/png=krita_png.desktop;chromium.desktop;swayimg.desktop;
+video/mp4=vlc.desktop;
+inode/directory=org.kde.ark.desktop;
+application/x-shellscript=org.kde.kate.desktop;code-oss.desktop;kitty-open.desktop;PortProton.desktop;
+x-scheme-handler/tg=userapp-Kotatogram Desktop-JFU7C2.desktop;org.telegram.desktop.desktop;
+application/json=org.kde.kate.desktop;code-oss.desktop;
+application/x-osu-lazer-skin=osu-lazer.desktop;osu!.desktop;
+application/octet-stream=libreoffice-writer.desktop;org.kde.ark.desktop;
+video/webm=vlc.desktop;
+application/vnd.microsoft.portable-executable=wine.desktop;PortProton.desktop;
+application/x-desktop=libreoffice-writer.desktop;
+application/x-compressed-tar=org.kde.ark.desktop;
+application/x-msdownload=PortProton.desktop;
+application/x-ms-shortcut=libreoffice-writer.desktop;
+image/vnd.zbrush.pcx=org.kde.kate.desktop;
+
+[Default Applications]
+application/x-ms-dos-executable;application/x-wine-extension-msp;application/x-msi;application/x-msdos-program=PortProton.desktop
+x-scheme-handler/tg=org.telegram.desktop.desktop
+application/octet-stream=org.kde.ark.desktop
+application/x-compressed-tar=org.kde.ark.desktop
+application/vnd.microsoft.portable-executable=PortProton.desktop
+application/x-msdownload=PortProton.desktop
+application/x-ms-shortcut=libreoffice-writer.desktop
+image/vnd.zbrush.pcx=org.kde.kate.desktop

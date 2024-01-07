@@ -1,0 +1,223 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    // "height": 36, // Waybar height (to be removed for auto height)
+    // Archived modules
+    // "custom/gpu", "bluetooth",  "custom/weather", "temperature", "sway/window"
+    // Choose the order of the modules
+    "modules-left": [ "sway/workspaces", "custom/media"],
+    "modules-center": ["clock", "custom/weather"],
+    "modules-right": ["sway/language", "backlight", "pulseaudio", "custom/ddc", "tray"],
+    // Modules configuration
+    "custom/ddc": {
+        //"exec": "./.config/waybar/ddc_backlight.sh",
+        "format": " ",
+        "interval": "3",
+        "on-scroll-down":"ddcutil --bus 3 setvcp --sleep-multiplier .1 10 - 20",
+        "on-scroll-up": "ddcutil --bus 3 setvcp --sleep-multiplier .1 10 + 20"
+    },
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}",
+        "format-icons": {
+            "1": "<span color=\"#FFFFFF\">1</span>",
+            "2": "<span color=\"#FFFFFF\">2</span>",
+            "3": "<span color=\"#FFFFFF\">3</span>",
+            "4": "<span color=\"#FFFFFF\">4</span>",
+            "5": "<span color=\"#FFFFFF\">5</span>",
+            "6": "<span color=\"#FFFFFF\">6</span>",
+            "7": "<span color=\"#FFFFFF\">7</span>",
+            "8": "<span color=\"#FFFFFF\">8</span>",
+            "9": "<span color=\"#FFFFFF\">9</span>",
+            "10": "<span color=\"#FFFFFF\">10</span>",
+            "urgent": " ",
+            "focused": "<span color=\"#FFFFFF\"> </span>",
+            "default": ""
+        }
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/window": {
+        "format": "{}",
+        "max-length": 50, 
+        "tooltip": false
+    },
+    "bluetooth": {
+        "interval": 30,
+        "format": "{icon}",
+        //"format-alt": "{status}",
+        "format-icons": {
+            "enabled": "",
+            "disabled": ""
+        },
+        "on-click": "blueberry"
+    },    
+    "sway/language": {
+        "format": " <big>{}</big>",
+        "max-length": 5,
+        "min-length": 5,        
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+        "tooltip": "true"
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 5
+    },
+    "clock": {
+        "format": "  {:%H:%M     %e %b}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "today-format": "<b>{}</b>",
+        "on-click": "gnome-calendar"
+    },
+    "cpu": {
+        "interval": 1,      
+        // "format": "  {avg_frequency}GHz <span color=\"darkgray\">| {usage}%</span>",
+        "format": " {icon0} {icon1} {icon2} {icon3} <span color=\"darkgray\">| {usage:>2}%</span>",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+        "max-length": 14,
+        "min-length": 14,
+        "on-click": "kitty -e htop --sort-key PERCENT_CPU",
+        "tooltip": true,
+        "format-tooltip": "{usage0}",
+    },
+    "memory": {
+		"interval": 5,
+		"format": " {used}GB",
+		"tooltip": true,
+		"tooltip-format": "Used:{used:0.1f}GiB \nFree:{avail}GiB \nSwap Used: {swapUsed}GiB \nSwap Free: {swapAvail}GiB",
+    },
+    "temperature": {
+        //"thermal-zone": 1,
+        "interval": 4,
+        "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+        "critical-threshold": 74,
+        "format-critical": "  {temperatureC}°C",
+        "format": "{icon}  {temperatureC}°C",
+        "format-icons": ["", "", ""],
+        "max-length": 7,
+        "min-length": 7
+    },
+    "network": {
+        // "interface": "wlan0", // (Optional) To force the use of this interface,
+        "format-wifi": "  {essid}",
+        //"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-ethernet": "{ifname}: ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "family": "ipv4",
+        "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthUpBits}  {bandwidthDownBits}",
+        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n {bandwidthUpBits}  {bandwidthDownBits}"
+    },
+    "pulseaudio": {
+        "scroll-step": 3, // %, can be a float
+        "format": "{icon}   {volume}% {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        //"format-source": "{volume}% ",
+        //"format-source-muted": "",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+    },
+    "custom/pacman": {
+        "format": "<big></big>  {}",
+        "interval": 3600,                     // every hour
+        "exec": "checkupdates | wc -l",       // # of updates
+        "exec-if": "exit 0",                  // always run; consider advanced run conditions
+        "on-click": "kitty -e 'yay'; pkill -SIGRTMIN+8 waybar", // update system
+        "signal": 8,
+        "max-length": 5,
+        "min-length": 3
+    },
+    "custom/weather": {
+        "exec": "curl 'https://wttr.in/?format=1'",
+        "interval": 3600
+    }, 
+      "custom/cpugovernor": {
+      "format": "{icon}",
+      "interval": 30,
+      "return-type": "json",
+      "exec": "$HOME/.config/waybar/custom_modules/cpugovernor.sh",
+      "min-length": 2,
+      "max-length": 2,
+        "format-icons": {
+            "perf": " perf",
+            "sched": " shed"
+        },
+    },    
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": " "
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/custom_modules/mediaplayer.py 2> /dev/null", // Script in resources folder
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+//    "custom/scratchpad-indicator": {
+//        "interval": 3,
+//        "return-type": "json",
+//        "exec": "swaymsg -t get_tree | jq --unbuffered --compact-output '( select(.name == \"root\") | .nodes[] | select(.name == \"__i3\") | .nodes[] | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [..  | (.nodes? + .floating_nodes?) // empty | .[] | select(.id |IN($scratch_ids[]))] as $scratch_nodes | { text: \"\\($scratch_nodes | length)\", tooltip: $scratch_nodes | map(\"\\(.app_id // .window_properties.class) (\\(.id)): \\(.name)\") | join(\"\\n\") }'",
+//        "format": "{} 􏠜",
+//        "on-click": "exec swaymsg 'scratchpad show'",
+//        "on-click-right": "exec swaymsg 'move scratchpad'"
+//    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", ""]
+    },
+    "battery": {
+        "bat": "BAT0",
+        "adapter": "ADP1",
+        "interval": 30,
+        "format": "{capacity}% {icon}",
+        "format-icons": ["<big></big>", "<big></big>", "<big></big>", "<big></big>", "<big></big>"],
+    },
+    "custom/notification": {
+        "layer": "bottom",
+        "tooltip": true,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "sh -c 'sleep 0.25 && swaync-client -t -sw'",
+        "on-click-right": "exec swaync-client -d -sw",
+        "escape": true
+    },
+},

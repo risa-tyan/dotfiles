@@ -1,0 +1,1 @@
+{"vaapi_device":"/dev/dri/by-path/pci-0000:07:00.0-render","rate_control":"VBR","bitrate":5000,"maxrate":7500,"level":50,"profile":100}

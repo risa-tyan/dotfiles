@@ -1,0 +1,27 @@
+/*
+*
+* Base16 Catppuccin
+* Author: https://github.com/catppuccin/catppuccin
+*
+*/
+
+@define-color base00 #1e1e2e;
+/*@define-color base01 #161320;*/
+@define-color base01 rgba(30, 30, 46, 0.3);
+/*@define-color base02 #313244;*/
+@define-color base02 rgba(55, 60, 85, 0.7);
+@define-color base03 #45475a;
+/*@define-color base04 #605b75;*/
+@define-color base04 rgba(120, 120, 140, 0.9);
+@define-color base05 #cdd6f4;
+@define-color base06 #f5e0dc;
+@define-color base07 #b4befe;
+/*@define-color base08 #f38ba8;*/
+@define-color base08 rgba(243, 110, 140, 0.65);
+@define-color base09 #fab387;
+@define-color base0A #f9e2af;
+@define-color base0B #a6e3a1;
+@define-color base0C #94e2d5;
+@define-color base0D #89b4fa;
+@define-color base0E #cba6f7;
+@define-color base0F #f2cdcd;

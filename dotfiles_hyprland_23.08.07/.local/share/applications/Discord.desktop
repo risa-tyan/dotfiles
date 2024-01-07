@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Discord: Chrome extention
-Comment=Run Discord on chromium
-Exec=discord
-Icon=
-Terminal=false
-Type=Application
-Categories=
